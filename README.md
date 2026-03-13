@@ -1,38 +1,34 @@
 # ORTHOVISION AI
 
-## Project Structure
+Advanced Orthopedic Imaging Analysis Platform for X-ray and CT decision support.
 
-orthovision_ai/
-├── core/
-│   ├── __init__.py
-│   ├── module_a.py
-│   └── module_b.py
-├── config/
-│   ├── __init__.py
-│   ├── settings.py
-│   └── config.json
-├── docs/
-│   ├── index.md
-│   └── usage.md
-├── tests/
-│   ├── __init__.py
-│   ├── test_module_a.py
-│   └── test_module_b.py
-├── requirements.txt
-├── README.md
-└── setup.py
+## What is new in this advanced version
+- Multi-stage orchestration with **runtime telemetry** per stage.
+- Rich fracture analytics outputs (risk score, continuity index, fragment geometry, rotation).
+- Expanded orthopedic measurements (hip, knee, spine, foot) with measurement-level confidence and synthetic landmark maps.
+- Longitudinal healing tracker producing trend slope and plateau detection.
+- Surgical planning protocol generation with warnings for high-complexity injuries.
+- Structured report text that includes geometry, risk, measurements, planning protocol, and warnings.
 
-## Core Modules
-- module_a.py: This module handles the core functionality A.
-- module_b.py: This module handles the core functionality B.
+## Platform Modules
+- DICOM ingestion and normalization (`modules/dicom_engine.py`)
+- Adaptive segmentation fallback (`modules/segmentation.py`)
+- Fracture geometry analytics (`modules/fracture_analysis.py`)
+- Orthopedic measurements + landmarks (`modules/measurements.py`)
+- 3D mesh generation placeholder (`modules/reconstruction3d.py`)
+- Surgical planning (`planning/surgical_planning.py`)
+- Implant recommendation (`modules/implant_recommendation.py`)
+- Healing tracker (`modules/healing_tracker.py`)
+- Report generation (`reporting/report_generator.py`)
+- Orchestration (`pipeline/orchestrator.py`)
 
-## Configuration Files
-- settings.py: Contains configuration settings for the project.
-- config.json: JSON file for configuration parameters.
+## Quickstart
+```bash
+python -m pip install -e .
+python -m orthovision_ai.cli.main ./sample_study --modality CT --output-dir artifacts
+```
 
-## Documentation
-- index.md: Overview and setup instructions for the project.
-- usage.md: Detailed usage instructions and examples.
-
-## Tests
-The `tests` directory contains unit tests for the core modules and ensures the functionality works as intended.
+## Validation
+```bash
+pytest -q
+```

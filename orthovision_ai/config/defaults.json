@@ -1,0 +1,17 @@
+{
+  "runtime": {
+    "device": "cpu",
+    "batch_size": 1,
+    "max_ct_processing_seconds": 60,
+    "max_xray_processing_seconds": 5
+  },
+  "dicom": {
+    "anonymize": true,
+    "nifti_export_dir": "artifacts/nifti"
+  },
+  "models": {
+    "segmentation_backend": "mock",
+    "fracture_backend": "mock",
+    "landmark_backend": "mock"
+  }
+}
