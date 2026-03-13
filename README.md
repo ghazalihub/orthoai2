@@ -1,38 +1,36 @@
 # ORTHOVISION AI
 
-## Project Structure
+Advanced Orthopedic Imaging Analysis Platform for X-ray and CT based decision support.
 
-orthovision_ai/
-├── core/
-│   ├── __init__.py
-│   ├── module_a.py
-│   └── module_b.py
-├── config/
-│   ├── __init__.py
-│   ├── settings.py
-│   └── config.json
-├── docs/
-│   ├── index.md
-│   └── usage.md
-├── tests/
-│   ├── __init__.py
-│   ├── test_module_a.py
-│   └── test_module_b.py
-├── requirements.txt
-├── README.md
-└── setup.py
+## Key capabilities
+- DICOM ingestion and metadata normalization/anonymization
+- Automated segmentation, fracture analysis, and orthopedic measurements
+- 3D reconstruction pipeline with STL export and 3D Slicer bridge
+- Surgical planning and implant recommendation baseline engines
+- Longitudinal fracture healing tracker and structured report generation
+- Dataset builder for model development workflows
 
-## Core Modules
-- module_a.py: This module handles the core functionality A.
-- module_b.py: This module handles the core functionality B.
+## Architecture
+The package is modular and centered around `OrthoVisionPipeline`, which orchestrates:
+1. DICOM processing
+2. Preprocessing
+3. Segmentation
+4. Fracture analysis
+5. Measurement extraction
+6. 3D reconstruction
+7. Surgical planning
+8. Implant recommendation
+9. Reporting and visualization manifest generation
 
-## Configuration Files
-- settings.py: Contains configuration settings for the project.
-- config.json: JSON file for configuration parameters.
+See `docs/architecture.md` for full module design and extension points.
 
-## Documentation
-- index.md: Overview and setup instructions for the project.
-- usage.md: Detailed usage instructions and examples.
+## Quickstart
+```bash
+python -m pip install -e .
+python -m orthovision_ai.cli.main ./sample_study --modality CT --output-dir artifacts
+```
 
-## Tests
-The `tests` directory contains unit tests for the core modules and ensures the functionality works as intended.
+## Development
+```bash
+pytest
+```
